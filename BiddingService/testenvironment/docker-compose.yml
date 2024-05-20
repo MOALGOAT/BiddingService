@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: mongodb
+    ports:
+      - "27019:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - auctionnetwork
+
+  biddingservice:
+    image: furk0402/biddingservice-image:1.0.0
+    container_name: biddingservice
+    hostname: biddingservice
+    ports:
+      - "81:8080" # Assuming your Catalog API listens on port 8080 internally
+    environment:
+      - ConnectionString=mongodb://admin:1234@mongodb:27017
+      - DatabaseName=4SemProj
+      - collectionName=Bidding
+    networks:
+      - auctionnetwork
+
+volumes:
+  mongodb_data_container:
+
+networks:
+  auctionnetwork:
+    driver: bridge
+    external: true
