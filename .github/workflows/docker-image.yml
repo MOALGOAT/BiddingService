@@ -14,6 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Restore .NET dependencies
+        run: dotnet restore BiddingService/BiddingServiceAPI/BiddingServiceAPI.csproj --verbosity detailed
+
       - name: Login to Docker Hub
         env: 
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
@@ -24,7 +27,9 @@ jobs:
       - name: Build the Docker image
         env: 
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        run: docker build . -f BiddingService/BiddingServiceAPI/Dockerfile -t ${DOCKER_USER}/biddingservice-image:1.0.0
+        run: |
+          docker build . -f BiddingService/BiddingServiceAPI/Dockerfile -t ${DOCKER_USER}/biddingservice-image:1.0.0
+          docker image inspect ${DOCKER_USER}/biddingservice-image:1.0.0
 
       - name: Push Docker image to Docker Hub
         env: 
