@@ -16,7 +16,7 @@ services:
       - auctionnetwork
 
   biddingservice:
-    image: furk0402/biddingservice-image:1.0.0
+    image: rasmusdd/biddingservice-image:1.0.0
     container_name: biddingservice
     hostname: biddingservice
     ports:
