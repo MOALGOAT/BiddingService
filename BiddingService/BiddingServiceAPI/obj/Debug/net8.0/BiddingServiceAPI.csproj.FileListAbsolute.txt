@@ -50,3 +50,4 @@ C:\Users\Admin\desktop\BiddingService\BiddingService\BiddingServiceAPI\bin\Debug
 C:\Users\Admin\desktop\BiddingService\BiddingService\BiddingServiceAPI\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
 C:\Users\Admin\desktop\BiddingService\BiddingService\BiddingServiceAPI\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Users\Admin\desktop\BiddingService\BiddingService\BiddingServiceAPI\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Admin\desktop\BiddingService\BiddingService\BiddingServiceAPI\bin\Debug\net8.0\RabbitMQ.Client.dll
