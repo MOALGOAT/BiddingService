@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using VaultSharp.V1.SecretsEngines.Database;
 
 namespace BiddingServiceAPI.Controllers
 {
@@ -44,6 +46,7 @@ namespace BiddingServiceAPI.Controllers
         }
 
         [HttpGet("{_id}")]
+        [Authorize(Roles = "1,2")]
         public async Task<ActionResult<Bid>> GetBid(Guid _id)
         {
             _logger.LogInformation($"Attempting to retrieve bid with ID: {_id}");
@@ -60,6 +63,7 @@ namespace BiddingServiceAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "1,2")]
         public async Task<ActionResult<IEnumerable<Bid>>> GetBidList()
         {
             _logger.LogInformation("Attempting to retrieve bid list");
@@ -76,6 +80,7 @@ namespace BiddingServiceAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "1")]
         public async Task<ActionResult<Guid>> AddBid(Bid bid)
         {
             _logger.LogInformation("Attempting to add bid");
@@ -87,6 +92,7 @@ namespace BiddingServiceAPI.Controllers
         }
 
         [HttpPut("{_id}")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> UpdateBid(Guid _id, Bid bid)
         {
             _logger.LogInformation($"Attempting to update bid with ID: {_id}");
@@ -109,6 +115,7 @@ namespace BiddingServiceAPI.Controllers
         }
 
         [HttpDelete("{_id}")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> DeleteBid(Guid _id)
         {
             _logger.LogInformation($"Attempting to delete bid with ID: {_id}");

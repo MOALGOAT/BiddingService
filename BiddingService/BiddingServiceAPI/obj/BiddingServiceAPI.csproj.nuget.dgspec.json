@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
         "projectName": "BiddingServiceAPI",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,12 +34,21 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.3, )"
@@ -75,6 +84,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "vaultsharp": {
+              "target": "Package",
+              "version": "[1.13.0.1, )"
             }
           },
           "imports": [
@@ -96,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
