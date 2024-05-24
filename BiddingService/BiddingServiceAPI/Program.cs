@@ -41,7 +41,7 @@ try
     builder.Services.AddSwaggerGen();
     builder.Services.AddControllers();
     builder.Services.AddSingleton<MongoDBContext>();
-    builder.Services.AddSingleton<IBiddingInterface, BiddingMongoDBService>();
+    builder.Services.AddSingleton<IBiddingInterface, BiddingService>();
     builder.Services.AddHostedService<BidSender>();
     builder.Services.AddTransient<VaultService>();
 
