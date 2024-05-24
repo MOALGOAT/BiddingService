@@ -44,8 +44,6 @@ namespace BiddingServiceAPI.Controllers
             }
         }
 
-       
-
         [HttpPost]
         public ActionResult<string> AddBid(Bid bid)
         {
