@@ -36,3 +36,16 @@
 2024-05-23 13:06:12.8925|INFO|Microsoft.Hosting.Lifetime|Application is shutting down...
 2024-05-23 13:06:12.8925|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping
 2024-05-23 13:06:12.9262|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped
+2024-05-23 13:31:08.3997|DEBUG|BiddingServiceAPI.Program|init main
+2024-05-23 13:31:08.6359|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider
+2024-05-23 13:31:08.7007|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting
+2024-05-23 13:31:08.8613|INFO|BidSender| [x] Sent Hello World!
+2024-05-23 13:31:08.9331|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5292
+2024-05-23 13:31:08.9331|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly BiddingServiceAPI
+2024-05-23 13:31:08.9331|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-05-23 13:31:08.9331|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-05-23 13:31:08.9475|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\BiddingService\BiddingService\BiddingServiceAPI
+2024-05-23 13:31:08.9475|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started
+2024-05-23 13:32:19.0305|INFO|Microsoft.Hosting.Lifetime|Application is shutting down...
+2024-05-23 13:32:19.0331|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopping
+2024-05-23 13:32:19.0560|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting stopped
