@@ -13,9 +13,8 @@ public class BidSender : BackgroundService
     private readonly IServiceScopeFactory _serviceScopeFactory;
     private readonly ILogger<BidSender> _logger;
 
-    public BidSender(IServiceScopeFactory serviceScopeFactory, ILogger<BidSender> logger)
+    public BidSender(ILogger<BidSender> logger)
     {
-        _serviceScopeFactory = serviceScopeFactory;
         _logger = logger;
         var factory = new ConnectionFactory { HostName = Environment.GetEnvironmentVariable("QueueHostName") }; // Use the hostname defined in Docker Compose
         var connection = factory.CreateConnection();

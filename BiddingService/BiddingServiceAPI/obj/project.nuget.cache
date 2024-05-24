@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+zRLhF2yyqy4q12iEGkkO7P75uKuY3R3/h/iLr4RvIxTu3R8SslXZj/mLyr19/08WBqYjC4sNsOiKLnchPNpHA==",
+  "dgSpecHash": "plsMgxaSV60BO3FbIY8PSac47WokF+Uq05sbuofgeV3sqnAbJWm53j3B0xVi72c9xg+j+9/FUU46h2bsamrUZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

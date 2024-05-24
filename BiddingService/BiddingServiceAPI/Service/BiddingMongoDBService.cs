@@ -5,66 +5,68 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using RabbitMQ.Client;
+using System.Text.Json;
+using System.Text;
 
 namespace BiddingServiceAPI.Service
 {
+
     public interface IBiddingInterface
     {
-        Task<Bid?> GetBid(Guid _id);
-        Task<IEnumerable<Bid>?> GetBidList();
-        Task<Guid> AddBid(Bid bid);
-        Task<long> UpdateBid(Bid bid);
-        Task<long> DeleteBid(Guid _id);
+        public string AddBid(Bid bid);
+        public void RefreshAuctions();
     }
 
-    public class BiddingMongoDBService : IBiddingInterface
+    public class BiddingService : IBiddingInterface
     {
-        private readonly ILogger<BiddingMongoDBService> _logger;
-        private readonly IMongoCollection<Bid> _biddingCollection;
+            private readonly IModel _channel;
+        private readonly ILogger<BiddingService> _logger;
 
-        public BiddingMongoDBService(ILogger<BiddingMongoDBService> logger, MongoDBContext dbContext, IConfiguration configuration)
+        // lave en private Dictionary<string(auctionId),auction> 
+
+        public BiddingService(ILogger<BiddingService> logger, IConfiguration configuration)
         {
-            var collectionName = configuration["biddingCollectionName"];
-            if (string.IsNullOrEmpty(collectionName))
+            _logger = logger;
+            var factory = new ConnectionFactory { HostName = Environment.GetEnvironmentVariable("QueueHostName") }; // Use the hostname defined in Docker Compose
+            var connection = factory.CreateConnection();
+            _channel = connection.CreateModel();
+            _channel.QueueDeclare(queue: "bid_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+        }
+
+        public  string AddBid(Bid bid)
+        {
+            // Check if bid is valid
+            //if (Bidisvalid)
+            if (true)
             {
-                throw new ApplicationException("BiddingCollectionName is not configured.");
+                var body = JsonSerializer.Serialize<Bid>(bid);
+                _channel.BasicPublish(exchange: string.Empty,
+                    routingKey: "bids",
+                    mandatory: false, // Add the missing 'mandatory' argument
+                    basicProperties: null,
+                    body:Encoding.UTF8.GetBytes(body));
+                //fejlhåndtering
+                _logger.LogInformation("x");//udfyld
+                return "bid accepted, xxx klokkeslæt";
+
+            }
+            else
+            {
+                _logger.LogWarning("Bid is not valid");
+                return "bid not accepted, xxx";
             }
 
-            _logger = logger;
-            _biddingCollection = dbContext.GetCollection<Bid>(collectionName);
-            _logger.LogInformation($"Collection name: {collectionName}");
         }
 
-        public async Task<Bid?> GetBid(Guid _id)
+        public void RefreshAuctions()
         {
-            var filter = Builders<Bid>.Filter.Eq(x => x._id, _id);
-            return await _biddingCollection.Find(filter).FirstOrDefaultAsync();
+            //opdater dictionary med auctions fra http request (dagens auktioner)
+            //linq til "privat"(mindre attributer)
+            //graphQL
+            //kaldes dagligt 
+            // ved startup
         }
 
-        public async Task<IEnumerable<Bid>?> GetBidList()
-        {
-            return await _biddingCollection.Find(_ => true).ToListAsync();
-        }
-
-        public async Task<Guid> AddBid(Bid bid)
-        {
-            bid._id = Guid.NewGuid();
-            await _biddingCollection.InsertOneAsync(bid);
-            return bid._id;
-        }
-
-        public async Task<long> UpdateBid(Bid bid)
-        {
-            var filter = Builders<Bid>.Filter.Eq(x => x._id, bid._id);
-            var result = await _biddingCollection.ReplaceOneAsync(filter, bid);
-            return result.ModifiedCount;
-        }
-
-        public async Task<long> DeleteBid(Guid _id)
-        {
-            var filter = Builders<Bid>.Filter.Eq(x => x._id, _id);
-            var result = await _biddingCollection.DeleteOneAsync(filter);
-            return result.DeletedCount;
-        }
     }
 }
