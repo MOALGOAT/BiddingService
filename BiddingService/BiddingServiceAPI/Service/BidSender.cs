@@ -20,7 +20,7 @@ public class BidSender : BackgroundService
         var factory = new ConnectionFactory { HostName = Environment.GetEnvironmentVariable("QueueHostName") }; // Use the hostname defined in Docker Compose
         var connection = factory.CreateConnection();
         _channel = connection.CreateModel();
-        _channel.QueueDeclare(queue: "hello", durable: false, exclusive: false, autoDelete: false, arguments: null);
+        _channel.QueueDeclare(queue: "bid_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
     }
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -42,7 +42,7 @@ public class BidSender : BackgroundService
         var body = Encoding.UTF8.GetBytes(message);
 
         _channel.BasicPublish(exchange: "",
-                              routingKey: "hello",
+                              routingKey: "bid_queue",
                               basicProperties: null,
                               body: body);
 
