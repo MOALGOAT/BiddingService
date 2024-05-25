@@ -1,4 +1,4 @@
-using RabbitMQ.Client;
+/*using RabbitMQ.Client;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -64,3 +64,4 @@ public interface IAuctionService
 {
     Task SomeMethodAsync();
 }
+*/

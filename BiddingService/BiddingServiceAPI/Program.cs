@@ -42,7 +42,7 @@ try
     builder.Services.AddControllers();
     builder.Services.AddSingleton<MongoDBContext>();
     builder.Services.AddSingleton<IBiddingInterface, BiddingService>();
-    builder.Services.AddHostedService<BidSender>();
+    //builder.Services.AddHostedService<BidSender>();
     builder.Services.AddTransient<VaultService>();
 
     // Configure JWT Authentication
