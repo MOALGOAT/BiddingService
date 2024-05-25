@@ -20,42 +20,36 @@ namespace BiddingServiceAPI.Service
 
     public class BiddingService : IBiddingInterface
     {
-        private readonly IModel _channel;
+            private readonly IModel _channel;
         private readonly ILogger<BiddingService> _logger;
-        private readonly BidSender _bidSender;
 
         // lave en private Dictionary<string(auctionId),auction> 
 
-        public BiddingService(ILogger<BiddingService> logger, IConfiguration configuration, BidSender bidSender)
+        public BiddingService(ILogger<BiddingService> logger, IConfiguration configuration)
         {
             _logger = logger;
             var factory = new ConnectionFactory { HostName = Environment.GetEnvironmentVariable("QueueHostName") }; // Use the hostname defined in Docker Compose
             var connection = factory.CreateConnection();
             _channel = connection.CreateModel();
             _channel.QueueDeclare(queue: "bid_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
-            _bidSender = bidSender;
         }
 
         public string AddBid(Bid bid)
         {
-            bid._id = Guid.NewGuid();
 
-            _logger.LogInformation(bid.ToString());
+            _logger.LogInformation(bid.ToString()
             // Check if bid is valid
             //if (Bidisvalid)
             if (true)
             {
-               /* var body = JsonSerializer.Serialize<Bid>(bid);
+                var body = JsonSerializer.Serialize<Bid>(bid);
                 _channel.BasicPublish(
                     exchange: string.Empty,
-                    routingKey: "bid_queue",
+                    routingKey: "bids",
                     mandatory: false, // Add the missing 'mandatory' argument
                     basicProperties: null,
                     body: Encoding.UTF8.GetBytes(body)
-                ); */
-
-                // Send budet til BidSender-tjenesten
-                _bidSender.SendMessageAsync(bid);
+                );
 
                 // Log the bid object directly
                 _logger.LogInformation("Bid received: {@Bid}", bid);
