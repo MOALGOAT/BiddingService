@@ -49,10 +49,27 @@ namespace BiddingServiceAPI.Controllers
         {
             _logger.LogInformation("Attempting to add bid");
 
-            var result =  _biddingService.AddBid(bid);
+            try
+            {
+                var result = _biddingService.AddBid(bid);
 
-            return Ok(result); // ikke altid "Ok(result)
+                if (result == null) // eller en anden betingelse der indikerer fejl
+                {
+                    var errorMessage = "Failed to add bid: result is null";
+                    _logger.LogError(errorMessage);
+                    return StatusCode(StatusCodes.Status500InternalServerError, errorMessage);
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                var errorMessage = $"An error occurred while adding the bid: {ex.Message}";
+                _logger.LogError(ex, errorMessage);
+                return StatusCode(StatusCodes.Status500InternalServerError, errorMessage);
+            }
         }
+
 
     }
 }
