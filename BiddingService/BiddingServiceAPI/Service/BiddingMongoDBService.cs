@@ -36,8 +36,9 @@ namespace BiddingServiceAPI.Service
 
         public string AddBid(Bid bid)
         {
+            bid._id = Guid.NewGuid();
 
-            _logger.LogInformation(bid.ToString()
+            _logger.LogInformation(bid.ToString());
             // Check if bid is valid
             //if (Bidisvalid)
             if (true)
@@ -45,7 +46,7 @@ namespace BiddingServiceAPI.Service
                 var body = JsonSerializer.Serialize<Bid>(bid);
                 _channel.BasicPublish(
                     exchange: string.Empty,
-                    routingKey: "bids",
+                    routingKey: "bid_queue",
                     mandatory: false, // Add the missing 'mandatory' argument
                     basicProperties: null,
                     body: Encoding.UTF8.GetBytes(body)
