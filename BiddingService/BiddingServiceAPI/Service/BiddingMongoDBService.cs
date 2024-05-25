@@ -36,6 +36,7 @@ namespace BiddingServiceAPI.Service
 
         public string AddBid(Bid bid)
         {
+            bid._id = Guid.NewGuid();
 
             _logger.LogInformation(bid.ToString());
             // Check if bid is valid
