@@ -6,6 +6,8 @@ using System;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text.Json;
+using BiddingServiceAPI.Models;
 
 public class BidSender : BackgroundService
 {
@@ -22,35 +24,41 @@ public class BidSender : BackgroundService
         _channel.QueueDeclare(queue: "bid_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
     }
 
-    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    /* protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
         Task.Run(async () =>
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                await SendMessageAsync("Hello World!");
+                await SendMessageAsync();
                 await Task.Delay(5000, stoppingToken); // Send a message every 5 seconds
             }
         }, stoppingToken);
 
         return Task.CompletedTask;
+    } */
+
+    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        return Task.CompletedTask;
     }
 
-    private async Task SendMessageAsync(string message)
+    public async Task SendMessageAsync(Bid bid)
     {
-        var body = Encoding.UTF8.GetBytes(message);
+        // Serialisér budet til JSON-streng
+        var json = JsonSerializer.Serialize<Bid>(bid);
+        var body = Encoding.UTF8.GetBytes(json);
 
         _channel.BasicPublish(exchange: "",
-                              routingKey: "bid_queue",
-                              basicProperties: null,
-                              body: body);
+                            routingKey: "bid_queue",
+                            basicProperties: null,
+                            body: body);
 
-        _logger.LogInformation($" [x] Sent {message}");
+        _logger.LogInformation($" [x] Sent bid: {json}");
 
-        using var scope = _serviceScopeFactory.CreateScope();
-        var auctionService = scope.ServiceProvider.GetRequiredService<IAuctionService>();
-        await auctionService.SomeMethodAsync();
+        // Du kan udføre yderligere handlinger her, hvis nødvendigt
     }
+
 
     public override void Dispose()
     {

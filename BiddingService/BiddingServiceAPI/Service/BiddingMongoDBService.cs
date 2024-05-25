@@ -20,8 +20,9 @@ namespace BiddingServiceAPI.Service
 
     public class BiddingService : IBiddingInterface
     {
-            private readonly IModel _channel;
+        private readonly IModel _channel;
         private readonly ILogger<BiddingService> _logger;
+        private readonly BidSender _bidSender;
 
         // lave en private Dictionary<string(auctionId),auction> 
 
@@ -43,14 +44,17 @@ namespace BiddingServiceAPI.Service
             //if (Bidisvalid)
             if (true)
             {
-                var body = JsonSerializer.Serialize<Bid>(bid);
+               /* var body = JsonSerializer.Serialize<Bid>(bid);
                 _channel.BasicPublish(
                     exchange: string.Empty,
-                    routingKey: "bids",
+                    routingKey: "bid_queue",
                     mandatory: false, // Add the missing 'mandatory' argument
                     basicProperties: null,
                     body: Encoding.UTF8.GetBytes(body)
-                );
+                ); */
+
+                // Send budet til BidSender-tjenesten
+                _bidSender.SendMessageAsync(bid);
 
                 // Log the bid object directly
                 _logger.LogInformation("Bid received: {@Bid}", bid);
