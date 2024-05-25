@@ -26,13 +26,14 @@ namespace BiddingServiceAPI.Service
 
         // lave en private Dictionary<string(auctionId),auction> 
 
-        public BiddingService(ILogger<BiddingService> logger, IConfiguration configuration)
+        public BiddingService(ILogger<BiddingService> logger, IConfiguration configuration, BidSender bidSender)
         {
             _logger = logger;
             var factory = new ConnectionFactory { HostName = Environment.GetEnvironmentVariable("QueueHostName") }; // Use the hostname defined in Docker Compose
             var connection = factory.CreateConnection();
             _channel = connection.CreateModel();
             _channel.QueueDeclare(queue: "bid_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+            _bidSender = bidSender;
         }
 
         public string AddBid(Bid bid)
