@@ -2351,19 +2351,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\jakob\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+      "projectUniqueName": "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
       "projectName": "BiddingServiceAPI",
-      "projectPath": "C:\\Users\\Admin\\desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\desktop\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
+      "projectPath": "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+      "packagesPath": "C:\\Users\\jakob\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jakob\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2453,7 +2453,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
