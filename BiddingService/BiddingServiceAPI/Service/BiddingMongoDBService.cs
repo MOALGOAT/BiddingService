@@ -34,30 +34,35 @@ namespace BiddingServiceAPI.Service
             _channel.QueueDeclare(queue: "bid_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
         }
 
-        public  string AddBid(Bid bid)
+        public string AddBid(Bid bid)
         {
+
+            _logger.LogInformation(bid.ToString());
             // Check if bid is valid
             //if (Bidisvalid)
             if (true)
             {
                 var body = JsonSerializer.Serialize<Bid>(bid);
-                _channel.BasicPublish(exchange: string.Empty,
+                _channel.BasicPublish(
+                    exchange: string.Empty,
                     routingKey: "bids",
                     mandatory: false, // Add the missing 'mandatory' argument
                     basicProperties: null,
-                    body:Encoding.UTF8.GetBytes(body));
-                //fejlhåndtering
-                _logger.LogInformation("x");//udfyld
-                return "bid accepted, xxx klokkeslæt";
+                    body: Encoding.UTF8.GetBytes(body)
+                );
 
+                // Log the bid object directly
+                _logger.LogInformation("Bid received: {@Bid}", bid);
+
+                return "bid accepted, xxx klokkeslæt";
             }
             else
             {
                 _logger.LogWarning("Bid is not valid");
                 return "bid not accepted, xxx";
             }
-
         }
+
 
         public void RefreshAuctions()
         {
