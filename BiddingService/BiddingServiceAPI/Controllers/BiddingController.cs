@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.HttpResults;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+
 
 namespace BiddingServiceAPI.Controllers
 {
@@ -45,6 +49,7 @@ namespace BiddingServiceAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "1")]
         public ActionResult<string> AddBid(Bid bid)
         {
             _logger.LogInformation("Attempting to add bid");

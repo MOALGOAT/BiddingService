@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
         "projectName": "BiddingServiceAPI",
-        "projectPath": "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
-        "packagesPath": "C:\\Users\\jakob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jakob\\OneDrive\\Skrivebord\\Projektsem4\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jakob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -80,6 +85,10 @@
               "target": "Package",
               "version": "[6.4.0, )"
             },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.5.2, )"
+            },
             "vaultsharp": {
               "target": "Package",
               "version": "[1.13.0.1, )"
@@ -104,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
