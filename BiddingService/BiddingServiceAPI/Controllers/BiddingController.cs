@@ -49,15 +49,13 @@ namespace BiddingServiceAPI.Controllers
             }
         }
 
-        [HttpPost]
-        [Authorize(Roles = "1")]
         public ActionResult<string> AddBid(Bid bid)
         {
             _logger.LogInformation("Attempting to add bid");
 
             try
             {
-                // Extract the user's id and username from the JWT token
+                // Extract user's id and username from the JWT token
                 var identity = HttpContext.User.Identity as ClaimsIdentity;
                 if (identity == null)
                 {
@@ -96,6 +94,7 @@ namespace BiddingServiceAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, errorMessage);
             }
         }
+
 
 
 
