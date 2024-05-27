@@ -49,7 +49,6 @@ namespace BiddingServiceAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "1")]
         public ActionResult<string> AddBid(Bid bid)
         {
             _logger.LogInformation("Attempting to add bid");
