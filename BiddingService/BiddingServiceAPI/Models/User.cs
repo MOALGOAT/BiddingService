@@ -16,7 +16,7 @@ namespace BiddingServiceAPI.Models
 
        // public string telephonenumber { get; set; }
 
-        public int role { get; set; }
+       // public int role { get; set; }
 
         public string username { get; set; }
 
