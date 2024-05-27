@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 
 namespace BiddingServiceAPI.Controllers
@@ -56,6 +57,27 @@ namespace BiddingServiceAPI.Controllers
 
             try
             {
+                // Extract the user's id and username from the JWT token
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                if (identity == null)
+                {
+                    return Unauthorized("Invalid token.");
+                }
+
+                var userIdClaim = identity.FindFirst("_id");
+                var usernameClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
+
+                if (userIdClaim == null || usernameClaim == null)
+                {
+                    return Unauthorized("Token does not contain required information.");
+                }
+
+                var userId = Guid.Parse(userIdClaim.Value);
+                var username = usernameClaim.Value;
+
+                // Set user details in the bid object
+                bid.user = new User { _id = userId, username = username };
+
                 var result = _biddingService.AddBid(bid);
 
                 if (result == null) // eller en anden betingelse der indikerer fejl
@@ -74,6 +96,7 @@ namespace BiddingServiceAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, errorMessage);
             }
         }
+
 
 
     }

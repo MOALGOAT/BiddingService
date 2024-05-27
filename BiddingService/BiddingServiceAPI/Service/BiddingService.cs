@@ -20,7 +20,7 @@ namespace BiddingServiceAPI.Service
 
     public class BiddingService : IBiddingInterface
     {
-            private readonly IModel _channel;
+        private readonly IModel _channel;
         private readonly ILogger<BiddingService> _logger;
 
         // lave en private Dictionary<string(auctionId),auction> 
@@ -36,11 +36,11 @@ namespace BiddingServiceAPI.Service
 
         public string AddBid(Bid bid)
         {
-            bid._id = Guid.NewGuid();
+            bid._id = Guid.NewGuid(); // Generer et nyt ID til buddet
 
             _logger.LogInformation(bid.ToString());
+
             // Check if bid is valid
-            //if (Bidisvalid)
             if (true)
             {
                 var body = JsonSerializer.Serialize<Bid>(bid);
