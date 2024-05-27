@@ -7,6 +7,6 @@ namespace BiddingServiceAPI.Models
     {
         [BsonId]
         public Guid _id { get; set; }
-        public string username { get; set; }
+        public string? username { get; set; }
     }
 }

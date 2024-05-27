@@ -63,7 +63,7 @@ namespace BiddingServiceAPI.Controllers
                 }
 
                 var userIdClaim = identity.FindFirst("_id");
-                var usernameClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
+                var usernameClaim = identity.FindFirst("username");
 
                 if (userIdClaim == null || usernameClaim == null)
                 {
