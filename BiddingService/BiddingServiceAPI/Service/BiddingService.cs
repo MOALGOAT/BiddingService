@@ -36,26 +36,25 @@ namespace BiddingServiceAPI.Service
 
         public string AddBid(Bid bid)
         {
-            bid._id = Guid.NewGuid(); // Generer et nyt ID til buddet
+            bid._id = Guid.NewGuid();
 
             _logger.LogInformation(bid.ToString());
 
-            // Check if bid is valid
             if (true)
             {
                 var body = JsonSerializer.Serialize<Bid>(bid);
                 _channel.BasicPublish(
                     exchange: string.Empty,
                     routingKey: "bid_queue",
-                    mandatory: false, // Add the missing 'mandatory' argument
+                    mandatory: false,
                     basicProperties: null,
                     body: Encoding.UTF8.GetBytes(body)
                 );
 
-                // Log the bid object directly
                 _logger.LogInformation("Bid received: {@Bid}", bid);
+                var currentDateTime = DateTime.Now;
 
-                return "bid accepted, xxx klokkeslæt";
+                return $"bid accepted at {currentDateTime} ";
             }
             else
             {

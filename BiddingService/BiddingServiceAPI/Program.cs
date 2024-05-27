@@ -35,8 +35,6 @@ try
     string mySecret = await vaultService.GetSecretAsync("secrets", "SecretKey");
     string myIssuer = await vaultService.GetSecretAsync("secrets", "IssuerKey");
 
-    // Add services to the container.
-    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
     builder.Services.AddControllers();
