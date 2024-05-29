@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rasmus Dyrby Damgaar\\onedrive\\skrivebord\\Eksamen4sem\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rasmus Dyrby Damgaar\\onedrive\\skrivebord\\Eksamen4sem\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rasmus Dyrby Damgaar\\onedrive\\skrivebord\\Eksamen4sem\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
         "projectName": "BiddingServiceAPI",
-        "projectPath": "C:\\Users\\Rasmus Dyrby Damgaar\\onedrive\\skrivebord\\Eksamen4sem\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
-        "packagesPath": "C:\\Users\\Rasmus Dyrby Damgaar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rasmus Dyrby Damgaar\\onedrive\\skrivebord\\Eksamen4sem\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\BiddingServiceAPI.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Skrivebord\\BiddingService\\BiddingService\\BiddingServiceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rasmus Dyrby Damgaar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,6 +89,10 @@
               "target": "Package",
               "version": "[6.4.0, )"
             },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.5.2, )"
+            },
             "vaultsharp": {
               "target": "Package",
               "version": "[1.13.0.1, )"
@@ -114,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

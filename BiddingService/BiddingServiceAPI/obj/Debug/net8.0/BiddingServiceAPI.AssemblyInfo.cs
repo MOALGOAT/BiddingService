@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BiddingServiceAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4371456c9c223ae549c96d49b0d2fcbb5524f42a")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+543ecd4723a42743c9b968b2b2daeec9dada6ed7")]
+>>>>>>> 671efcf406039f245b8adf08ce953a8672b13b20
 [assembly: System.Reflection.AssemblyProductAttribute("BiddingServiceAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BiddingServiceAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

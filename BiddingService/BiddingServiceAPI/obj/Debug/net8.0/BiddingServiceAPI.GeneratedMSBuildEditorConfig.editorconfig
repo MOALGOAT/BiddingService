@@ -9,11 +9,19 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BiddingServiceAPI
 build_property.RootNamespace = BiddingServiceAPI
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Rasmus Dyrby Damgaar\onedrive\skrivebord\Eksamen4sem\BiddingService\BiddingService\BiddingServiceAPI\
+=======
+build_property.ProjectDir = C:\Users\Admin\OneDrive\Skrivebord\BiddingService\BiddingService\BiddingServiceAPI\
+>>>>>>> 671efcf406039f245b8adf08ce953a8672b13b20
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = C:\Users\Rasmus Dyrby Damgaar\onedrive\skrivebord\Eksamen4sem\BiddingService\BiddingService\BiddingServiceAPI
+=======
+build_property.MSBuildProjectDirectory = C:\Users\Admin\OneDrive\Skrivebord\BiddingService\BiddingService\BiddingServiceAPI
+>>>>>>> 671efcf406039f245b8adf08ce953a8672b13b20
 build_property._RazorSourceGeneratorDebug = 
