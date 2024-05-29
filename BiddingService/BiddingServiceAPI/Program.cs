@@ -28,12 +28,17 @@ try
 {
     var builder = WebApplication.CreateBuilder(args);
 
+    var _logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+
     var configuration = builder.Configuration;
 
     var vaultService = new VaultService(configuration);
 
-    string mySecret = await vaultService.GetSecretAsync("secrets", "SecretKey");
-    string myIssuer = await vaultService.GetSecretAsync("secrets", "IssuerKey");
+    //string mySecret = await vaultService.GetSecretAsync("secrets", "SecretKey");
+    //string myIssuer = await vaultService.GetSecretAsync("secrets", "IssuerKey");
+
+    string mySecret = await vaultService.GetSecretAsync("secrets", "SecretKey") ?? "5Jw9yT4fb9T5XrwKUz23QzA5D9BuY3p6";
+    string myIssuer = await vaultService.GetSecretAsync("secrets", "IssuerKey") ?? "gAdDxQDQq7UYNxF3F8pLjVmGuU5u8g3y";
 
     // Add services to the container.
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

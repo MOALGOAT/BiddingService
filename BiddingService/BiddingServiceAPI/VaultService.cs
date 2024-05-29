@@ -13,6 +13,7 @@ namespace BiddingServiceAPI
     public class VaultService
     {
         private readonly IVaultClient _vaultClient;
+    
 
         public VaultService(IConfiguration _config) 
         {
@@ -38,7 +39,7 @@ namespace BiddingServiceAPI
             _vaultClient = new VaultClient(vaultClientSettings);
         }
 
-        public async Task<string> GetSecretAsync(string path, string key)
+        public async Task<string?> GetSecretAsync(string path, string key)
         {
             try
             {
@@ -57,8 +58,10 @@ namespace BiddingServiceAPI
             }
             catch (VaultApiException ex)
             {
+                Console.WriteLine($"Fejl ved hentning af secret fra Vault: {ex.Message}");
+                return null;
                 // Håndter fejl fra Vault API
-                throw new Exception($"Fejl ved hentning af secret fra Vault: {ex.Message}");
+                //throw new Exception($"Fejl ved hentning af secret fra Vault: {ex.Message}");
             }
             catch (Exception ex)
             {
