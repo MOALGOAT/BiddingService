@@ -13,6 +13,7 @@ namespace BiddingServiceAPI
     public class VaultService
     {
         private readonly IVaultClient _vaultClient;
+    
 
         public VaultService(IConfiguration _config) 
         {
