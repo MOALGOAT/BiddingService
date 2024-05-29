@@ -56,14 +56,7 @@ namespace BiddingServiceAPI
             }
             catch (VaultApiException ex)
             {
-<<<<<<< HEAD
-                Console.WriteLine($"Fejl ved hentning af secret fra Vault: {ex.Message}");
-                return null;
-                // Håndter fejl fra Vault API
-                //throw new Exception($"Fejl ved hentning af secret fra Vault: {ex.Message}");
-=======
                 throw new Exception($"Error while retreiving key from Vault: {ex.Message}");
->>>>>>> 671efcf406039f245b8adf08ce953a8672b13b20
             }
             catch (Exception ex)
             {
