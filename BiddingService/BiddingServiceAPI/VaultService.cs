@@ -60,7 +60,8 @@ namespace BiddingServiceAPI
             }
             catch (Exception ex)
             {
-                return null + "fejl ved hentning af secret";
+                Console.WriteLine("Error retrieving secret from Vault: " + ex.Message); 
+                return null;
             }
         }
 
